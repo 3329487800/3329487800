@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+  <Operation Class="PatchOperationSequence">
+	<operations>
+	  <li Class="PatchOperationFindMod">
+			
+		<mods><li>Moyo-From the depth</li></mods>
+			
+		<match Class="PatchOperationSequence">
+		<operations>
+			<!--Ammo-->
+			
+			<li Class="PatchOperationAddModExtension">
+				<xpath>Defs/PawnKindDef[
+				defName="Moyo_TopCivilan" or
+				defName="Moyo_MiddleCivilan" or
+				defName="Moyo_BottomCivilan" or
+				defName="Moyo_Resercher" or
+				defName="Moyo_TopSmuggler" or
+				defName="Moyo_MiddleSmuggler" or
+				@Name="MoyoSoldierLight" or
+				@Name="MoyoSoldierStandard" or
+				defName="Moyo_leader" or
+				@Name="MoyoGuardian" or
+				@Name="MoyoGuardianAssault" or
+				@Name="MoyoGeneral"
+				]</xpath>
+				<value>
+					<li Class="CombatExtended.LoadoutPropertiesExtension">
+					<primaryMagazineCount>
+						<min>2</min>
+						<max>6</max>
+					</primaryMagazineCount>
+					</li>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAddModExtension">
+				<xpath>Defs/PawnKindDef[@Name="MoyoSoldierHeavy"]</xpath>
+				<value>
+					<li Inherit="False" Class="CombatExtended.LoadoutPropertiesExtension">
+					<primaryMagazineCount>
+						<min>2</min>
+						<max>3</max>
+					</primaryMagazineCount>
+					<forcedSidearm>
+					  <sidearmMoney>
+						<min>500</min>
+						<max>1200</max>
+					  </sidearmMoney>
+					  <weaponTags>
+						<li>MoyoBasicGun</li>
+						<li>Moyo_SpacerLightGun</li>
+					  </weaponTags>
+					  <magazineCount>
+						<min>3</min>
+						<max>4</max>
+					  </magazineCount>
+					</forcedSidearm>
+					</li>
+				</value>
+			</li>
+			
+			<!--Backpack-->
+			
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/PawnKindDef[
+				@Name="MoyoSoldierLight" or
+				@Name="MoyoSoldierStandard" or
+				@Name="MoyoSoldierHeavy" or
+				@Name="MoyoSoldierAssult" or
+				@Name="MoyoGuardian" or
+				@Name="MoyoGuardianAssault" or
+				@Name="MoyoGeneral" or
+				defName="Moyo_Engineer" or
+				defName="Moyo_Resercher" or
+				defName="Moyo_MiddleSmuggler"
+				]/apparelRequired</xpath>
+				<value>
+					<li>CE_Apparel_Backpack</li>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName="CE_Apparel_Backpack"]/apparel/tags</xpath>
+				<value>
+					<li>Moyo_Industrial</li>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName="CE_Apparel_TribalBackpack"]/apparel/tags</xpath>
+				<value>
+					<li>Moyo_Neolithic</li>
+				</value>
+			</li>
+		
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/PawnKindDef[defName="Moyo_BottomCivilan"]/apparelTags</xpath>
+				<value>
+					<li>SectarianLight</li>
+					<li>PredatorsLight</li>
+					<li>BrotherhoodMedium</li>
+				</value>
+			</li>
+	
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/PawnKindDef[defName="Moyo_BottomCivilan"]/weaponMoney</xpath>
+				<value>
+					<weaponMoney>1250~3500</weaponMoney>
+				</value>
+			</li>
+	
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/PawnKindDef[defName="Moyo_BottomCivilan"]/weaponTags</xpath>
+				<value>
+					<li>CE_Sidearm</li>
+					<li>CE_AI_Pistol</li>
+				</value>
+			</li>
+	
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/PawnKindDef[defName="Moyo_MiddleCivilan"]/apparelTags</xpath>
+				<value>
+					<li>Outlander</li>
+					<li>PredatorsLight</li>
+					<li>BrotherhoodLight</li>
+				</value>
+			</li>
+	
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/PawnKindDef[defName="Moyo_TopCivilan"]/apparelTags</xpath>
+				<value>
+					<li>PredatorsLight</li>
+					<li>Outlander</li>
+					<li>Tribal</li>
+				</value>
+			</li>
+
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/PawnKindDef[defName="Moyo_TopSmuggler"]/apparelTags</xpath>
+				<value>
+					<li>PredatorsLight</li>
+					<li>BanditsLight</li>
+					<li>RenegadesLight</li>
+				</value>
+			</li>
+
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/PawnKindDef[defName="Moyo_MiddleSmuggler"]/apparelTags</xpath>
+				<value>
+					<li>BanditsLight</li>
+					<li>RenegadesLight</li>
+					<li>PredatorsMedium</li>
+				</value>
+			</li>
+		
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/PawnKindDef[defName="Moyo_Engineer"]/apparelTags</xpath>
+				<value>
+					<li>PredatorsLight</li>
+					<li>BrotherhoodLight</li>
+				</value>
+			</li>
+		
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/PawnKindDef[defName="Moyo_Engineer"]/weaponMoney</xpath>
+				<value>
+					<weaponMoney>600~900</weaponMoney>
+				</value>
+			</li>
+		
+			<li Class="PatchOperationReplace">
+			  <xpath>Defs/PawnKindDef[@Name="MoyoSoldierLight"]/weaponMoney</xpath>
+			  <value>
+				<weaponMoney>4000~6900</weaponMoney>
+			  </value>
+			</li>
+	
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/PawnKindDef[@Name="MoyoSoldierLight"]/weaponTags</xpath>
+				<value>
+					<li>Futuristic</li>
+					<li>CE_AI_AssaultWeapon</li>
+				</value>
+			</li>
+	
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/PawnKindDef[@Name="MoyoSoldierLight"]/apparelTags</xpath>
+				<value>
+					<li>BrotherhoodScout</li>
+					<li>BrotherhoodLight</li>
+				</value>
+			</li>
+	
+			<li Class="PatchOperationReplace">
+			  <xpath>Defs/PawnKindDef[@Name="MoyoSoldierStandard"]/weaponMoney</xpath>
+			  <value>
+				<weaponMoney>4000~8500</weaponMoney>
+			  </value>
+			</li>
+
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/PawnKindDef[@Name="MoyoSoldierStandard"]/weaponTags</xpath>
+				<value>
+					<li>Futuristic</li>
+					<li>TierTwoRifle</li>
+					<li>CE_AI_Grenade</li>
+				</value>
+			</li>
+
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/PawnKindDef[@Name="MoyoSoldierLight"]/apparelTags</xpath>
+				<value>
+					<li>BrotherhoodScout</li>
+					<li>BrotherhoodLight</li>
+				</value>
+			</li>
+
+			<li Class="PatchOperationReplace">
+			  <xpath>Defs/PawnKindDef[@Name="MoyoSoldierHeavy"]/weaponMoney</xpath>
+			  <value>
+				<weaponMoney>8600~11100</weaponMoney>
+			  </value>
+			</li>
+	
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/PawnKindDef[@Name="MoyoSoldierHeavy"]/weaponTags</xpath>
+				<value>
+					<li>TierTwoNormal</li>
+					<li>GunHeavy</li>
+				</value>
+			</li>
+	
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/PawnKindDef[@Name="MoyoSoldierHeavy"]/apparelTags</xpath>
+				<value>
+					<li>SectarianLight</li>
+					<li>BrotherhoodMedium</li>
+				</value>
+			</li>
+	
+			<li Class="PatchOperationReplace">
+			  <xpath>Defs/PawnKindDef[defName="Moyo_leader"]/weaponMoney</xpath>
+			  <value>
+				<weaponMoney>5000~8500</weaponMoney>
+			  </value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/PawnKindDef[defName="Moyo_leader"]/weaponTags</xpath>
+				<value>
+					<li>CE_Sidearm</li>
+					<li>CE_AI_Pistol</li>
+					<li>CE_OneHandedWeapon</li>
+					<li>HitechMelee</li>
+					<li>HitechMelee2H</li>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+			  <xpath>Defs/PawnKindDef[@Name="MoyoGuardian"]/weaponMoney</xpath>
+			  <value>
+				<weaponMoney>9500~13000</weaponMoney>
+			  </value>
+			</li>
+	
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/PawnKindDef[@Name="MoyoGuardian"]/apparelTags</xpath>
+				<value>
+					<li>OrionLight</li>
+					<li>BrotherhoodMedium</li>
+				</value>
+			</li>
+	
+		</operations>
+		</match>	
+	  </li>
+	</operations>	
+  </Operation>
+</Patch>

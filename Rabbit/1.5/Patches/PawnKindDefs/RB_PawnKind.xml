@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+  <Operation Class="PatchOperationSequence">
+	<operations>
+	  <li Class="PatchOperationFindMod">
+			
+		<mods>
+            <li>Core SK</li>
+        </mods>
+			
+		<match Class="PatchOperationSequence">
+		<operations>
+		
+			<!--Backpack-->
+			
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/PawnKindDef[
+				defName="RB_Wanderer" or
+				defName="RB_SubOfficer" or
+				defName="RB_EliteOfficer" or
+				defName="RB_FSniper" or
+				defName="RB_FMachinegunner"
+				]/apparelRequired</xpath>
+				<value>
+					<li>CE_Apparel_Backpack</li>
+				</value>
+			</li>
+			
+			
+			<!--Regular-->
+			
+			<li Class="PatchOperationAddModExtension">
+				<xpath>Defs/PawnKindDef[defName="RB_EnergySupply" or
+				defName="RB_Technician" or
+				defName="RB_Worker" or
+				defName="RB_Wanderer" or
+				defName="RB_SubOfficer" or
+				defName="RB_EliteOfficer"
+				]</xpath>
+				<value>
+					<li Class="CombatExtended.LoadoutPropertiesExtension">
+					<primaryMagazineCount>
+						<min>2</min>
+						<max>3</max>
+					</primaryMagazineCount>
+					<sidearms>
+					<li>
+						<generateChance>0.2</generateChance>
+						<sidearmMoney>
+							<min>500</min>
+							<max>1200</max>
+						</sidearmMoney>
+						<weaponTags>
+							<li>CE_Sidearm_Melee</li>
+						</weaponTags>
+					</li>
+					</sidearms>
+					</li>
+				</value>
+			</li>
+			
+			<!--Military-->
+			
+			<li Class="PatchOperationAddModExtension">
+				<xpath>Defs/PawnKindDef[defName="RB_FRifle"]</xpath>
+				<value>
+					<li Class="CombatExtended.LoadoutPropertiesExtension">
+					<primaryMagazineCount>
+						<min>6</min>
+						<max>8</max>
+					</primaryMagazineCount>
+					<sidearms>
+					<li>
+						<generateChance>1</generateChance>
+						<sidearmMoney>
+							<min>500</min>
+							<max>1200</max>
+						</sidearmMoney>
+						<weaponTags>
+							<li>CE_Sidearm_Melee</li>
+						</weaponTags>
+					</li>
+					</sidearms>
+					</li>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAddModExtension">
+				<xpath>Defs/PawnKindDef[defName="RB_FSniper"]</xpath>
+				<value>
+					<li Class="CombatExtended.LoadoutPropertiesExtension">
+					<primaryMagazineCount>
+						<min>3</min>
+						<max>5</max>
+					</primaryMagazineCount>
+					<sidearms>
+					<li>
+						<generateChance>1</generateChance>
+						<sidearmMoney>
+							<min>600</min>
+							<max>1500</max>
+						</sidearmMoney>
+						<weaponTags>
+							<li>CE_Sidearm_Melee</li>
+						</weaponTags>
+					</li>
+					<li>
+						<generateChance>0.5</generateChance>
+						<sidearmMoney>
+							<min>50</min>
+							<max>250</max>
+						</sidearmMoney>
+						<weaponTags>
+							<li>CE_Sidearm</li>
+						</weaponTags>
+                        <magazineCount>
+							<min>1</min>
+							<max>2</max>
+						</magazineCount>
+					</li>
+					</sidearms>
+					</li>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAddModExtension">
+				<xpath>Defs/PawnKindDef[defName="RB_FMachinegunner"]</xpath>
+				<value>
+					<li Class="CombatExtended.LoadoutPropertiesExtension">
+					<primaryMagazineCount>
+						<min>4</min>
+						<max>6</max>
+					</primaryMagazineCount>
+					<sidearms>
+					<li>
+						<generateChance>1</generateChance>
+						<sidearmMoney>
+							<min>500</min>
+							<max>1200</max>
+						</sidearmMoney>
+						<weaponTags>
+							<li>CE_Sidearm_Melee</li>
+						</weaponTags>
+					</li>
+					</sidearms>
+					</li>
+				</value>
+			</li>
+			
+			<!--Replace minigun with MG Catergory-->
+			
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/PawnKindDef[defName="RB_FMachinegunner"]/weaponTags</xpath>
+				<value>
+					<weaponTags>
+					  <li>CE_MachineGun</li>
+					</weaponTags>
+				</value>
+			</li>
+						
+			<li Class="PatchOperationAddModExtension">
+				<xpath>Defs/PawnKindDef[defName="RB_FSapper"]</xpath>
+				<value>
+					<li Class="CombatExtended.LoadoutPropertiesExtension">
+					<primaryMagazineCount>
+						<min>10</min>
+						<max>30</max>
+					</primaryMagazineCount>
+					<shieldMoney>
+						<min>400</min>
+						<max>1000</max>
+					</shieldMoney>
+					<shieldTags>
+						<li>OutlanderShield</li>
+					</shieldTags>
+					<shieldChance>0.5</shieldChance>
+					<forcedSidearm>
+						<sidearmMoney>
+							<min>150</min>
+							<max>350</max>
+						</sidearmMoney>
+						<weaponTags>
+							<li>CE_Sidearm</li>
+						</weaponTags>
+						<magazineCount>
+							<min>1</min>
+							<max>2</max>
+						</magazineCount>
+					</forcedSidearm>
+					</li>
+				</value>
+			</li>
+			
+			<!--Advanced-->
+			
+			<li Class="PatchOperationAddModExtension">
+				<xpath>Defs/PawnKindDef[defName="RB_RGunner"]</xpath>
+				<value>
+					<li Class="CombatExtended.LoadoutPropertiesExtension">
+					<primaryMagazineCount>
+						<min>6</min>
+						<max>8</max>
+					</primaryMagazineCount>
+					<sidearms>
+					<li>
+						<generateChance>0.5</generateChance>
+						<sidearmMoney>
+							<min>1200</min>
+							<max>3000</max>
+						</sidearmMoney>
+						<weaponTags>
+							<li>CE_Sidearm_Melee</li>
+						</weaponTags>
+					</li>
+					</sidearms>
+					</li>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/PawnKindDef[defName="RB_EnergySupply"]/weaponMoney</xpath>
+				<value>
+					<weaponMoney>2600~4500</weaponMoney>
+				</value>
+			</li>
+		
+			<li Class="PatchOperationReplace">
+			  <xpath>Defs/PawnKindDef[defName="RB_Technician"]/weaponMoney</xpath>
+			  <value>
+				<weaponMoney>4000~6900</weaponMoney>
+			  </value>
+			</li>
+		
+			<li Class="PatchOperationReplace">
+			  <xpath>Defs/PawnKindDef[defName="RB_Worker"]/weaponMoney</xpath>
+			  <value>
+				<weaponMoney>4000~8500</weaponMoney>
+			  </value>
+			</li>
+
+			<li Class="PatchOperationReplace">
+			  <xpath>Defs/PawnKindDef[defName="RB_Wanderer"]/weaponMoney</xpath>
+			  <value>
+				<weaponMoney>8600~11100</weaponMoney>
+			  </value>
+			</li>
+		
+			<li Class="PatchOperationReplace">
+			  <xpath>Defs/PawnKindDef[defName="RB_SubOfficer"]/weaponMoney</xpath>
+			  <value>
+				<weaponMoney>5000~8500</weaponMoney>
+			  </value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+			  <xpath>Defs/PawnKindDef[defName="RB_EliteOfficer"]/weaponMoney</xpath>
+			  <value>
+				<weaponMoney>9500~13000</weaponMoney>
+			  </value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+			  <xpath>Defs/PawnKindDef[defName="RB_FRifle"]/weaponMoney</xpath>
+			  <value>
+				<weaponMoney>3000~5000</weaponMoney>
+			  </value>
+			</li>
+		
+			<li Class="PatchOperationReplace">
+			  <xpath>Defs/PawnKindDef[defName="RB_FSniper"]/weaponMoney</xpath>
+			  <value>
+				<weaponMoney>4000~6500</weaponMoney>
+			  </value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+			  <xpath>Defs/PawnKindDef[defName="RB_FMachinegunner"]/weaponMoney</xpath>
+			  <value>
+				<weaponMoney>6500~10000</weaponMoney>
+			  </value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+			  <xpath>Defs/PawnKindDef[defName="RB_RGunner"]/weaponMoney</xpath>
+			  <value>
+				<weaponMoney>7500~12000</weaponMoney>
+			  </value>
+			</li>
+			
+		</operations>
+		</match>	
+	  </li>
+	</operations>	
+  </Operation>
+</Patch>

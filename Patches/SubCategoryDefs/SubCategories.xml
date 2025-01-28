@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+    <Operation Class="PatchOperationAdd">
+    <xpath>Defs</xpath>
+    <value>
+	<ArchitectSense.DesignationSubCategoryDef>
+		<defName>Rabbit_buildings</defName>
+		<label>Rabbit</label>
+		<description>All the buildings for the rabbit race.</description>
+		<defNames>
+			<li>Planetariumrefineryprimitive</li>
+			<li>Planetariumrefinery</li>
+			<li>RB_MoonTailoringBench</li>
+			<li>RB_MoonTableMachining</li>
+		</defNames>
+		<designationCategory>Production</designationCategory>
+		<debug>false</debug>
+	</ArchitectSense.DesignationSubCategoryDef>
+	</value>
+    </Operation>
+	
+</Patch>
+
+
+

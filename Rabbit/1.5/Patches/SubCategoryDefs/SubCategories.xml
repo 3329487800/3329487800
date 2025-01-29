@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+    <Operation Class="PatchOperationAdd">
+    <xpath>Defs</xpath>
+    <value>
+	<ArchitectSense.DesignationSubCategoryDef>
+		<defName>Rabbit_buildings</defName>
+		<label>Rabbit</label>
+		<description>All the buildings for the rabbit race.</description>
+		<defNames>
+			<li>Planetariumrefineryprimitive</li>
+			<li>Planetariumrefinery</li>
+			<li>RB_MoonTailoringBench</li>
+			<li>RB_MoonTableMachining</li>
+		</defNames>
+		<designationCategory>Production</designationCategory>
+		<debug>false</debug>
+	</ArchitectSense.DesignationSubCategoryDef>
+	</value>
+    </Operation>
+	
+	<Operation Class="PatchOperationRemove">
+  <xpath>Defs/DesignationCategoryDef[defName="Lunararchitecture"]</xpath>
+</Operation>
+
+<Operation Class="PatchOperationReplace">
+  <xpath>Defs/ThingDef[defName="RB_MoonTailoringBench"]/designationCategory</xpath>
+  <value>
+    <designationCategory>Production</designationCategory>
+  </value>
+</Operation>
+
+<Operation Class="PatchOperationReplace">
+  <xpath>Defs/ThingDef[defName="RB_MoonTableMachining"]/designationCategory</xpath>
+  <value>
+    <designationCategory>Production</designationCategory>
+  </value>
+</Operation>
+
+<Operation Class="PatchOperationReplace">
+  <xpath>Defs/ThingDef[defName="Planetariumrefinery"]/designationCategory</xpath>
+  <value>
+    <designationCategory>Production</designationCategory>
+  </value>
+</Operation>
+	
+</Patch>
+
+
+

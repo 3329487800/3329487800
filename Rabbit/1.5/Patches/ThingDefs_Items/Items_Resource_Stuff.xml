@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+    <Operation Class="PatchOperationAttributeSet">
+                <xpath>Defs/ThingDef[defName="Moonthread"]</xpath>
+                <attribute>ParentName</attribute>
+                <value>SK_ResourceBase</value>
+</Operation>
+
+    <Operation Class="PatchOperationAttributeSet">
+                <xpath>Defs/ThingDef[defName="Moonsilk"]</xpath>
+                <attribute>ParentName</attribute>
+                <value>SK_ResourceBase</value>
+</Operation>
+
+
+	<Operation Class="PatchOperationReplace">
+	<xpath>Defs/ThingDef[defName="Moonthread"]/statBases/StuffPower_Armor_Sharp</xpath>
+	<value>
+		<StuffPower_Armor_Sharp>1.4</StuffPower_Armor_Sharp>
+	</value>
+</Operation>
+
+<Operation Class="PatchOperationReplace">
+	<xpath>Defs/ThingDef[defName="Moonthread"]/statBases/StuffPower_Armor_Blunt</xpath>
+	<value>
+		<StuffPower_Armor_Blunt>1.5</StuffPower_Armor_Blunt>
+	</value>
+</Operation>
+
+<Operation Class="PatchOperationReplace">
+	<xpath>Defs/ThingDef[defName="Moonthread"]/statBases/StuffPower_Armor_Heat</xpath>
+	<value>
+		<StuffPower_Armor_Heat>0.12</StuffPower_Armor_Heat>
+		<StuffPower_Armor_Electric>0.1</StuffPower_Armor_Electric>
+		<Bulk>0.2</Bulk>
+	</value>
+</Operation>
+
+<Operation Class="PatchOperationReplace">
+	<xpath>Defs/ThingDef[defName="Moonsilk"]/statBases/StuffPower_Armor_Sharp</xpath>
+	<value>
+		<StuffPower_Armor_Sharp>2.05</StuffPower_Armor_Sharp>
+	</value>
+</Operation>
+
+<Operation Class="PatchOperationReplace">
+	<xpath>Defs/ThingDef[defName="Moonsilk"]/statBases/StuffPower_Armor_Blunt</xpath>
+	<value>
+		<StuffPower_Armor_Blunt>1.95</StuffPower_Armor_Blunt>
+	</value>
+</Operation>
+
+<Operation Class="PatchOperationReplace">
+	<xpath>Defs/ThingDef[defName="Moonsilk"]/statBases/StuffPower_Armor_Heat</xpath>
+	<value>
+		<StuffPower_Armor_Heat>0.3</StuffPower_Armor_Heat>
+		<StuffPower_Armor_Electric>0.2</StuffPower_Armor_Electric>
+		<Bulk>0.2</Bulk>
+	</value>
+</Operation>
+
+<Operation Class="PatchOperationAdd">
+	<xpath>Defs/ThingDef[defName="Moonthread"]/stuffProps/statFactors</xpath>
+	<value>
+        <Beauty>1.4</Beauty>
+	    <WorkToMake>1.1</WorkToMake>
+		<WorkToBuild>1.1</WorkToBuild>
+		<MoveSpeed>1.06</MoveSpeed>
+		<MarketValue>0.8</MarketValue>
+		<BedRestEffectiveness>1.1</BedRestEffectiveness>
+		<ImmunityGainSpeedFactor>1.05</ImmunityGainSpeedFactor>
+		<Mass>0.56</Mass>
+	</value>
+</Operation>
+
+<Operation Class="PatchOperationAdd">
+	<xpath>Defs/ThingDef[defName="Moonsilk"]/stuffProps/statFactors</xpath>
+	<value>
+		<WorkToMake>1.5</WorkToMake>
+		<WorkToBuild>1.5</WorkToBuild>
+		<Beauty>2.2</Beauty>
+		<MoveSpeed>1.15</MoveSpeed>
+		<MarketValue>0.9</MarketValue>
+		<BedRestEffectiveness>1.09</BedRestEffectiveness>
+		<ImmunityGainSpeedFactor>1.1</ImmunityGainSpeedFactor>
+		<Mass>0.6</Mass>
+	</value>
+</Operation>
+
+<Operation Class="PatchOperationReplace">
+				<xpath>Defs/RecipeDef[defName="Make_Moonthread"]/ingredients</xpath>
+				<value>
+					<ingredients>
+						<li>
+							<filter>
+								<thingDefs>
+									<li>Cloth</li>
+								</thingDefs>
+							</filter>
+							<count>45</count>
+						</li>
+						<li>
+							<filter>
+								<thingDefs>
+									<li>SilverBar</li>
+								</thingDefs>
+							</filter>
+							<count>5</count>
+						</li>
+						<li>
+                             <filter>
+                                 <categories>
+                                    <li>Leathers</li>
+                                 </categories>
+                                 <disallowedThingDefs>
+                                 <li>Leather_Thrumbo</li>
+                                 </disallowedThingDefs>
+                                </filter>
+                              <count>45</count>
+                        </li>
+					</ingredients>
+				</value>
+</Operation>
+			
+<Operation Class="PatchOperationReplace">
+				<xpath>Defs/RecipeDef[defName="Make_Moonsilk"]/ingredients</xpath>
+				<value>
+					<ingredients>
+						<li>
+        <filter>
+          <thingDefs>
+            <li>DevilstrandCloth</li>
+          </thingDefs>
+        </filter>
+        <count>25</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>SilverBar</li>
+          </thingDefs>
+        </filter>
+        <count>10</count>
+      </li>
+            <li>
+        <filter>
+          <thingDefs>
+            <li>Plasteel</li>
+          </thingDefs>
+        </filter>
+        <count>15</count>
+      </li>
+      <li>
+        <filter>
+          <categories>
+            <li>Leathers</li>
+          </categories>
+          <disallowedThingDefs>
+            <li>Leather_Thrumbo</li>
+          </disallowedThingDefs>
+        </filter>
+        <count>45</count>
+      </li>
+					</ingredients>
+				</value>
+</Operation>
+			
+<Operation Class="PatchOperationReplace">
+				<xpath>Defs/RecipeDef[defName="Make_Moonthread"]/fixedIngredientFilter</xpath>
+				<value>
+					<fixedIngredientFilter>
+						<thingDefs>
+							<li>Cloth</li>
+							<li>SilverBar</li>
+						</thingDefs>
+						<categories>
+							<li>Leathers</li>
+						</categories>
+						<disallowedThingDefs>
+							<li>Leather_Patch</li>
+							<li>Leather_Human</li>
+							<li>Leather_Thrumbo</li>
+						</disallowedThingDefs>		
+					</fixedIngredientFilter>
+				</value>
+</Operation>
+
+
+			
+<Operation Class="PatchOperationReplace">
+				<xpath>Defs/RecipeDef[defName="Make_Moonsilk"]/fixedIngredientFilter</xpath>
+				<value>
+					<fixedIngredientFilter>
+						<thingDefs>
+							<li>DevilstrandCloth</li>
+							<li>SilverBar</li>
+							<li>Plasteel</li>
+						</thingDefs>
+						<categories>
+							<li>Leathers</li>
+						</categories>
+						<disallowedThingDefs>
+							<li>Leather_Patch</li>
+							<li>Leather_Human</li>
+							<li>Leather_Thrumbo</li>
+						</disallowedThingDefs>		
+					</fixedIngredientFilter>
+				</value>
+</Operation>
+
+<Operation Class="PatchOperationReplace">
+	<xpath>Defs/ThingDef[defName="Moonthread"]/stuffProps/categories</xpath>
+	<value>
+	  <categories>
+		<li>HF</li>
+	  </categories>
+	</value>
+</Operation>
+
+<Operation Class="PatchOperationReplace">
+	<xpath>Defs/ThingDef[defName="Moonsilk"]/stuffProps/categories</xpath>
+	<value>
+	  <categories>
+		<li>HF</li>
+	  </categories>
+	</value>
+</Operation>
+
+<Operation Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="Moonthread"]/thingCategories</xpath>
+				<value>
+					<thingCategories Inherit="False">
+			        <li>HTextiles</li>
+					</thingCategories>
+				</value>
+</Operation>
+		
+<Operation Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName="Moonthread"]</xpath>
+				<value>
+					<techLevel>Spacer</techLevel>
+				</value>
+</Operation>
+
+<Operation Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="Moonsilk"]/thingCategories</xpath>
+				<value>
+					<thingCategories Inherit="False">
+			        <li>HTextiles</li>
+					</thingCategories>
+				</value>
+</Operation>
+		
+<Operation Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName="Moonsilk"]</xpath>
+				<value>
+					<techLevel>Spacer</techLevel>
+				</value>
+</Operation>
+</Patch>

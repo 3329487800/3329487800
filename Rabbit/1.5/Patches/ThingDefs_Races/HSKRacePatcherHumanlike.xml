@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Patch>
+
+	<!-- == BasePawn Replacement == -->
+	<Operation Class="PatchOperationAttributeSet">
+		<xpath>Defs/ThingDef[@Name="RB_PawnBase"]</xpath>
+		<attribute>ParentName</attribute>
+		<value>SK_BasePawn</value>
+	</Operation>
+	
+</Patch>
